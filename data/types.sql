@@ -1,0 +1,45 @@
+/*
+SQL Types
+
+Numeric:
+	BIGINT, BIT, DECIMAL, INT, MONEY, NUMERIC, SMALLINT,
+	SMALLMONEY, TINYINT
+
+Approximate Numerics:
+	FLOAT, REAL
+    
+Date and Time:
+	DATE, DATETIME, DATETIME2, DATETIMEOFFSET,
+	SMALLDATETIME, TIME
+
+Strings:
+	CHAR, TEXT, VARCHAR
+    
+Unicode Strings:
+	NCHAR, NTEXT, NVARCHAR
+    
+Binary Strings:
+	BINARY, IMAGE, VARBINARY
+
+Other:
+	CURSOR, HIERARCHYID, SQL_VARIANT, TABLE,
+	TIMESTAMP, UNIQUEIDENTIFIER, XML
+*/
+
+USE `playground`;
+
+DROP TABLE IF EXISTS `person`;
+
+CREATE TABLE `person` (
+	`phone_number` BIGINT DEFAULT NULL,
+	`salary` FLOAT DEFAULT NULL,
+	`name` NVARCHAR(80) NOT NULL,
+	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+);
+
+/*
+SQL Server compatibility:
+
+AUTO_INCREMENT = IDENTITY(1,1)
+`name` = [name]
+*/
