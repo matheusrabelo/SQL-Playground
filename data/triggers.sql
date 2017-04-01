@@ -15,11 +15,11 @@ CREATE TABLE `product` (
 DROP TRIGGER IF EXISTS `net_amount_calculation`;
 
 DELIMITER ;;
-	CREATE TRIGGER `net_amount_calculation`
-	BEFORE INSERT ON `playground`.`product`
+CREATE TRIGGER `net_amount_calculation`
+BEFORE INSERT ON `playground`.`product`
 	FOR EACH ROW
 		BEGIN SET NEW.`net_amount` = NEW.`gross_amount` * (1 - NEW.`tax`);
-    END ;;
+END ;;
 DELIMITER ;
 
 INSERT INTO `product`
